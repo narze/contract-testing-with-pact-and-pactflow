@@ -89,7 +89,7 @@ layout: center
 # Contract vs Mocking
 
 - When mocking requests, we tend to use it for 3rd party APIs, we don't care how the endpoint will behave if we send data like query strings, since we don't have any control of them.
--
+
 - But since we are building both of the services calling each other (Consumer & Provider) the Contract works on both sides:
   - On consumer side, the contract emulates the provider (i.e. as a HTTP mock server) which receives request and returns data
   - On provider side, the contract emulates the consumer (i.e. cURL, Postman) which make the request and verify the returning data
