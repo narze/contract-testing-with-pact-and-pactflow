@@ -25,7 +25,19 @@ drawings:
 # Pact & Pactflow
 By Manassarn Manoonchai (Noom)
 
-<!-- Slide notes -->
+<!--
+(Brief introduction)
+-->
+
+---
+theme: default
+layout: center
+background: https://source.unsplash.com/collection/94734566/1920x1080
+---
+
+# Problems with integration & e2e tests
+
+<!-- (Start with why. Address some of the problems found while developing services) -->
 
 ---
 theme: default
@@ -35,13 +47,13 @@ background: https://source.unsplash.com/collection/94734566/1920x1080
 
 # What is Contract Testing?
 
-<!-- Slide notes -->
+<!-- Introducing Contract Testing, but what is it? -->
 
 ---
 
-# Contract testing
-  - A technique for testing an integration point by checking each application in isolation to ensure the messages it sends or receives conforms to a shared understanding that is documented in a “contract”.
-  - A form of testing, where you test the "contract" between the services/systems communicating to each other.
+# Contract Testing
+- A technique for testing an integration point by checking each application in isolation to ensure the messages it sends or receives conforms to a shared understanding that is documented in a “contract”.
+- A form of testing, where you test the "contract" between the services/systems communicating to each other.
 
 <!-- Slide notes -->
 
@@ -55,15 +67,15 @@ background: https://source.unsplash.com/collection/94734566/1920x1080
 # The Consumer & The Provider
 
 
-<!-- Slide notes -->
+<!-- The contract testing consists of the consumer and the provider -->
 
 ---
 layout: center
 ---
 
 # Contract will have 2 sides : Consumer & Provider
-  - Consumer is the one who consume data e.g. API Client, MQ Subscriber
-  - Provider is the one who provide data e.g. API Server, MQ Publisher/Producer
+- Consumer is the one who consume data e.g. API Client, MQ Subscriber
+- Provider is the one who provide data e.g. API Server, MQ Publisher/Producer
 
 
 <!-- Slide notes -->
@@ -95,7 +107,10 @@ layout: center
   - On provider side, the contract emulates the consumer (i.e. cURL, Postman) which make the request and verify the returning data
 
 
-<!-- Slide notes -->
+<!--
+- I like to compare the contract testing with the mocking or test doubles
+- Like when we're mocking the call to 3rd party payment API, we can't control any behavior of the API itself, we can only expect the request and mock the response, based on their API documentation
+-->
 
 ---
 
@@ -111,7 +126,10 @@ layout: center
   - https://pact.io
 
 
-<!-- Slide notes -->
+<!--
+Since the contract needs to be defined, then comes the question, who will define the contract? Actually it can be started on any side.
+- Pact also uses consumer side to define the contract
+-->
 
 ---
 theme: default
@@ -122,7 +140,9 @@ layout: center
 
 <img src="/images/pact.png" style="height: 70%; margin: 0 auto;" />
 
-<!-- Slide notes -->
+<!--
+So today I'm introducing Pact, which I've tried on the project for about a week or two...
+-->
 
 ---
 
@@ -133,7 +153,11 @@ layout: center
 
 <img src="/images/pact-1.png" style="height: 70%; margin: 0 auto;" />
 
-<!-- Slide notes -->
+
+<!--
+- Pact is a tool contract testing
+- It supports most intergations like HTTP, Message Queues, Serverless, and more
+-->
 
 ---
 
@@ -257,6 +281,16 @@ layout: center
 ---
 
 # Demo Time!
+
+<!--
+- Show consumer contract test
+- Run consumer contract testing
+- Publish to pactflow
+- View contract on pactflow
+- Show provider contract test
+- Run provider contract testing
+- View contract on pactflow agai
+-->
 
 ---
 
